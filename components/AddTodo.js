@@ -24,7 +24,7 @@ export default function AddTodo(props) {
 
 const styles = StyleSheet.create({
     input: {
-        marginBottom: 18,
+        marginBottom: 20,
         borderBottomWidth: 1,
         padding: 8,
         borderRadius: 4
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     button: {
         padding: 8,
         backgroundColor: 'coral',
-        marginBottom: 18
     },
     btnText: {
         color: '#fff',

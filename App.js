@@ -41,12 +41,14 @@ export default function App() {
           <Header />
           <View style={styles.content}>
             <AddTodo addHandler={addHandler}/>
-            <FlatList
-              data={todos}
-              renderItem={({ item }) => (
-                <TodoItem item={item} deleteHandler={deleteHandler} />
-              )}
-            />
+            <View style={styles.list}>
+              <FlatList
+                data={todos}
+                renderItem={({ item }) => (
+                  <TodoItem item={item} deleteHandler={deleteHandler} />
+                )}
+              />
+            </View>
           </View>
         {/* <StatusBar style="auto" /> */}
       </View>
@@ -60,6 +62,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
-    padding: 34
+    padding: 34,
+    flex: 1
+  },
+  list: {
+    marginTop: 20,
+    flex: 1
   }
 });
