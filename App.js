@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, StyleSheet, View, Alert } from 'react-native';
 import AddTodo from './components/AddTodo';
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
@@ -18,13 +18,19 @@ export default function App() {
     })
   }
 
-  const addHandler = ( item ) => {
-    setTodos((prevItems) => {
-      return [
-        { text: item, key: Math.random().toString() },
-        ...prevItems
-      ]
-    })
+  const addHandler = ( text ) => {
+    if(text.length > 3){
+      setTodos((prevtexts) => {
+        return [
+          { text: text, key: Math.random().toString() },
+          ...prevtexts
+        ]
+      })
+    } else {
+      Alert.alert('Oops!', 'Text long must atleast 4 chars.', [
+        { text: 'Understood', onPress: () => console.log('Alert closed') }
+      ])
+    }
   }
 
   return (

@@ -25,7 +25,7 @@ export default function AddTodo(props) {
 const styles = StyleSheet.create({
     input: {
         marginBottom: 18,
-        borderWidth: 1,
+        borderBottomWidth: 1,
         padding: 8,
         borderRadius: 4
     },
